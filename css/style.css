@@ -1,0 +1,53 @@
+.container {
+  width: 840px;
+  .center-block();
+}
+
+#header{
+	height: 200px;
+	width: 840px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	text-align: center;
+}
+
+#clean{
+	height: 200px;
+	width: 275px;	
+	float: left;
+}
+
+#myMovies, #allMovies{
+	height: 200px;
+	width: 275px;
+	float: left;
+}
+
+#movies{
+	width: 840px;
+}
+
+.header h1 {
+   color: #000000;
+   font-size: 25px;
+   font-weight: bold;
+   font-family: Arial, serif;
+}
+
+.h1:hover {
+   background color: rgb(0, 102, 255);
+}
+
+.btn {
+   background: transparent;
+   color: #000;
+   border: 1px solid #000;
+   font-size: 14px;
+   font-weight: 200;
+   padding:2px 10px;
+   border-radius: 2px;
+}
+
+
+
