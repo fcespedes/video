@@ -1,4 +1,4 @@
-app.controller('MainController', ['$scope', '$filter', function($scope, $filter) {
+app.controller('MainController', ['$scope', '$http', function($scope, $http) {
    
   var movies = [
     {
@@ -73,22 +73,48 @@ app.controller('MainController', ['$scope', '$filter', function($scope, $filter)
       director: "Robert Zemeckis",
       mine: false
     }
-  ]
+  ];
+
+  var myMovies = [
+    {
+      genre: "Crime, Drama x",
+      title: "The Shawshank Redemption",
+      director: "Frank Darabont",
+      mine: true
+    },
+    {
+      genre: "Crime, Drama",
+      title: "Pulp Fiction",
+      director: "Quentin Tarantino",
+      mine: true
+    }
+  ];
 
   $scope.dlist = movies;
   //enviar la lista por parametro para saber que lista mostrar en el html segun la opcion de allMovies o myMovies que escoja el usuario
 
   $scope.showMovies = function showMovies(movie){
 
-    if (movie == 'mine'){
-      $scope.dlist = $filter('filter')(movies, {mine:true});
+    if (movie === 'mine'){
+      $scope.dlist = myMovies;
 
-    }else if (movie == 'all'){
+    }else if (movie === 'all'){
       $scope.dlist = movies;
 
-    }else if (movie == 'clear'){
+    }else if (movie === 'clear'){
       $scope.dlist = [];
     };
+  };
+
+  $scope.getHops = function(){
+    console.log('into method ...');
+    $http.get('http://api.brewerydb.com/v2/hops?key=152806a21a5799a336c636960866286d').
+      then(function(response) {
+        console.log(response);
+      }, function(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+      });
   }
-  
+
 }]);

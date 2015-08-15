@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
 
   <body ng-app="myApp">
     
-    <div class="container" ng-controller="MainController"> 
+    <div class="custom-container" ng-controller="MainController">
 
       <div id="header"> 
       
@@ -21,7 +20,7 @@
         </div>
         
         <div id="clean">
-          <a href="" ng-click="showMovies('clear')"><img src="img/movie-theme.jpg"> <a/>
+          <a href="" ng-click="showMovies('clear')"><img src="img/movie-theme.jpg"/> <a/>
         </div>
         
         <div id="allMovies">     
@@ -52,7 +51,11 @@
 
       </div>
 
+      <button data-ng-click="getHops()">Get Hops</button>
+
     </div>
+
+
 
     <!-- Modules -->
     <script src="js/app.js"></script>
